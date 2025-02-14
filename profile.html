@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>Commute</title>
+</head>
+    <section>
+        <body>
+            <h1>Profile</h1>
+            <p>Create your profile to start connecting with others!</p>
+            <h3>Create your profile</h3>
+            <p>
+                <label for="firstName">First Name:</label>
+                <input type="text" name="firstName" id="firstName" required>
+            </p>
+            <p>
+                <label for="lastName">Last Name:</label>
+                <input type="text" name="lastName" id="lastName" required>
+            </p>
+            <p>
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email" required>
+            </p>
+            <p>
+                <label for="subject" placeholder="Your location">Location:</label>
+                <input type="text" name="subject" id="subject" required>
+            </p>
+            <p>Roles:
+                <ul>
+                    <li>Driver: You can drive and take passengers with you</li>
+                    <li>Passenger: You need someone else to drive you</li>
+                    <li>Both: You want to split driving duties with fellow commuters</li>
+                </ul>
+            </p>
+            <input list="role" placeholder="Select your role">
+            <datalist id="role">
+                <option value="Driver">
+                <option value="Passenger">
+                <option value="Both">
+            </datalist>
+
+            <input type="submit">
+        </body>
+    </section>
+    <section>
+        <h4>Privacy</h4>
+        <p>Your information is safe with us. We will never share your information with third parties.</p>
+    </section>
+    <section>
+        <h4>Contact</h4>
+        <p>If you have any questions or concerns, reach out to us at 
+            <a href="mailto:reachout@commute.com" target="_blank">reachout@commute.com</a>
+        </p>
+    </section>
+</html>
