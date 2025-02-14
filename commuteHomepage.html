@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commute - Find Your Ride</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        .map-container img {
+            width: 80%;
+            height: auto;
+        }
+        .commute-list {
+            display: none;
+        }
+    </style>
+    <script>
+        function showRoutes() {
+            document.getElementById("commute-list").style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <h1>Commute</h1>
+    <p>Find people with similar daily commutes!</p>
+    
+    <section>
+        <label for="from">From: </label>
+        <input type="text" id="from" placeholder="Enter starting point">
+        <label for="to">To: </label>
+        <input type="text" id="to" placeholder="Enter destination">
+        <button onclick="showRoutes()">Show Routes</button>
+    </section>
+    
+    <section class="map-container">
+        <img src="mapfeb14.png" alt="Map">
+    </section>
+    
+    <section>
+        <ul id="commute-list" class="commute-list">
+            <li>John Doe - Toyota Corolla 🚗</li>
+            <li>Jane Smith - Honda Civic 🚙</li>
+            <li>Alex Johnson - Tesla Model 3 ⚡</li>
+        </ul>
+    </section>
+</body>
+</html>
