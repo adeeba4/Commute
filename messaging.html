@@ -14,6 +14,16 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            flex-direction: column;
+        }
+        header {
+            width: 100%;
+            background: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
         }
         .chat-container {
             width: 400px;
@@ -21,14 +31,12 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            margin-top: 20px;
         }
         .chat-header {
-            background: #007bff;
+            background: #0056b3;
             color: white;
             padding: 15px;
-            text-align: center;
-            font-size: 18px;
-            font-weight: bold;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -66,7 +74,7 @@
             cursor: pointer;
         }
         .chat-input button:hover {
-            background: #0056b3;
+            background: #004080;
         }
         .message {
             margin: 5px 0;
@@ -85,6 +93,7 @@
     </style>
 </head>
 <body>
+    <header>Messaging</header>
     <div class="chat-container">
         <div class="chat-header">
             <img src="womanpfp1.jpg" alt="User Profile" class="profile-pic">
@@ -98,7 +107,6 @@
             <button onclick="sendMessage()">Send</button>
         </div>
     </div>
-
     <script>
         function sendMessage() {
             var input = document.getElementById("message-input");
