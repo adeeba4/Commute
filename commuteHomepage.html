@@ -16,6 +16,9 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            background-color: #C8A2C8;
+        }
+
         }
         section {
             margin-bottom: 20px;
@@ -26,6 +29,27 @@
         }
         .commute-list {
             display: none;
+        }
+
+              .friend-list {
+            background: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .friend {
+            padding: 10px;
+            border-bottom: 1px ;
+        }
+        .friend:last-child {
+            border-bottom: none;
+        }
+        button {
+            background: #C8A2C8;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 3px;
         }
     </style>
     <script>
@@ -57,5 +81,30 @@
             <li>Alex Johnson - Tesla Model 3 ⚡</li>
         </ul>
     </section>
+    <div class="container">
+        <div class="friend-list">
+            <h2>Find Friends to Carpool With</h2>
+            <div class="friend">
+                <p><strong>Alice Johnson</strong> - Route: Downtown to University</p>
+                <button>Add Friend</button>
+            </div>
+            <div class="friend">
+                <p><strong>Michael Smith</strong> - Route: Westside to Tech Park</p>
+                <button>Add Friend</button>
+            </div>
+            <div class="friend">
+                <p><strong>Sophia Brown</strong> - Route: North End to City Center</p>
+                <button>Add Friend</button>
+            </div>
+            <div class="friend">
+                <p><strong>David Lee</strong> - Route: East Side to Downtown</p>
+                <button>Add Friend</button>
+            </div>
+            <div class="friend">
+                <p><strong>Emily Davis</strong> - Route: South End to Business District</p>
+                <button>Add Friend</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
