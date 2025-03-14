@@ -11,7 +11,7 @@ body {
 }
 header {
     width: 100%;
-    background: #007bff;
+    background: #c8a2c8;
     color: white;
     text-align: center;
     padding: 20px;
@@ -27,7 +27,7 @@ header {
     margin-top: 20px;
 }
 .chat-header {
-    background: #0056b3;
+    background: #c8a2c8;
     color: white;
     padding: 15px;
     display: flex;
@@ -59,7 +59,7 @@ header {
 }
 .chat-input button {
     padding: 10px 15px;
-    background: #007bff;
+    background: #c8a2c8;
     color: white;
     border: none;
     border-radius: 5px;
@@ -67,7 +67,7 @@ header {
     cursor: pointer;
 }
 .chat-input button:hover {
-    background: #004080;
+    background: #c8a2c8;
 }
 .message {
     margin: 5px 0;
@@ -75,7 +75,7 @@ header {
     border-radius: 5px;
 }
 .sent {
-    background: #007bff;
+    background: #c8a2c8;
     color: white;
     align-self: flex-end;
 }
