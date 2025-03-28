@@ -25,7 +25,14 @@
     </style>
     <script>
         function showRoutes() {
-            document.getElementById("commute-list").style.display = "block";
+            let commuteList = document.getElementById("commute-list");
+
+            // Instead of just setting display to block, toggle its visibility
+            if (commuteList.style.display === "none" || commuteList.style.display === "") {
+                commuteList.style.display = "block";
+            } else {
+                commuteList.style.display = "none";
+            }
         }
     </script>
 </head>
