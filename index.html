@@ -4,30 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Commute - Find Your Ride</title>   
-
-    <style>
-        .map-container {
-        text-align: center;
-        }
-        .map-container img {
-            width: 55%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            width: 55%;
-        }
-
-        .commute-list {
-            display: none;
-        }
-        
-    </style>
+    <title>Commute - Find Your Ride</title>
     <script>
         function showRoutes() {
             let commuteList = document.getElementById("commute-list");
-
-            // Instead of just setting display to block, toggle its visibility
             if (commuteList.style.display === "none" || commuteList.style.display === "") {
                 commuteList.style.display = "block";
             } else {
@@ -36,55 +16,63 @@
         }
     </script>
 </head>
-<body class="commute-page">
-
-    <nav>
-        <a href="index.html">Home</a>&nbsp;
-        <a href="messaging.html">Message</a>&nbsp;
-        <a href="user.html">Profile</a>&nbsp;
-        <a href="profile.html" id>Create an account</a>&nbsp;
-    </nav>
-    
-    <h1>Commute</h1>
-    <p>Find people with similar daily commutes!</p>
-    
-    <section>
-        <label for="from">From: </label>
-        <input type="text" id="from" placeholder="Enter starting point">
-        <label for="to">To: </label>
-        <input type="text" id="to" placeholder="Enter destination">
-        <button onclick="showRoutes()">Show Routes</button>
-    </section><br>
-    
-    <section class="map-container">
-        <img src="mapfeb14.png" alt="Map">
-    </section>
-    
-    
-    <div id="commute-list" class="commute-list">
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="messaging.html">Messages</a>
+            <a href="user.html">Profile</a>
+            <a href="profile.html">Create Account</a>
+        </nav>
+        
+        <h1 class="text-center">Commute</h1>
+        <p class="text-center">Find people with similar daily commutes!</p>
+        
         <section>
-            <h2>Find Friends to Carpool With</h2>
-            <div>
-                <p><strong>Alice Johnson</strong> - Route: Downtown to University</p>
-                <button onclick="alert('Friend Added!')">Add Friend</button>
-            </div>
-            <div>
-                <p><strong>Michael Smith</strong> - Route: Westside to Tech Park</p>
-                <button onclick="alert('Friend Added!')">Add Friend</button>
-            </div>
-            <div>
-                <p><strong>Sophia Brown</strong> - Route: North End to City Center</p>
-                <button onclick="alert('Friend Added!')">Add Friend</button>
-            </div>
-            <div>
-                <p><strong>David Lee</strong> - Route: East Side to Downtown</p>
-                <button onclick="alert('Friend Added!')">Add Friend</button>
-            </div>
-            <div>
-                <p><strong>Emily Davis</strong> - Route: South End to Business District</p>
-                <button onclick="alert('Friend Added!')">Add Friend</button>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 200px;">
+                    <label for="from">From:</label>
+                    <input type="text" id="from" placeholder="Enter starting point">
+                </div>
+                <div style="flex: 1; min-width: 200px;">
+                    <label for="to">To:</label>
+                    <input type="text" id="to" placeholder="Enter destination">
+                </div>
+                <div style="align-self: flex-end; min-width: 200px;">
+                    <button onclick="showRoutes()">Show Routes</button>
+                </div>
             </div>
         </section>
+        
+        <section class="map-container">
+            <img src="mapfeb14.png" alt="Map">
+        </section>
+        
+        <div id="commute-list" class="commute-list" style="display: none;">
+            <section>
+                <h2>Find Friends to Carpool With</h2>
+                <div style="margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                    <p><strong>Alice Johnson</strong> - Route: Downtown to University</p>
+                    <button onclick="alert('Friend Added!')">Add Friend</button>
+                </div>
+                <div style="margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                    <p><strong>Michael Smith</strong> - Route: Westside to Tech Park</p>
+                    <button onclick="alert('Friend Added!')">Add Friend</button>
+                </div>
+                <div style="margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                    <p><strong>Sophia Brown</strong> - Route: North End to City Center</p>
+                    <button onclick="alert('Friend Added!')">Add Friend</button>
+                </div>
+                <div style="margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                    <p><strong>David Lee</strong> - Route: East Side to Downtown</p>
+                    <button onclick="alert('Friend Added!')">Add Friend</button>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <p><strong>Emily Davis</strong> - Route: South End to Business District</p>
+                    <button onclick="alert('Friend Added!')">Add Friend</button>
+                </div>
+            </section>
+        </div>
     </div>
 </body>
 </html>
