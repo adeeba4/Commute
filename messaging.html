@@ -3,31 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Commute Messaging</title>
-    <link href="styles.css" rel="stylesheet">
-    <nav>
-        <a href="index.html">Home</a>&nbsp;
-        <a href="messaging.html">Messages</a>&nbsp;
-        <a href="user.html">Profile</a>&nbsp;
-        <a href="profile.html">My Profile</a>&nbsp;
-
-    </nav>
-</head>
-<body>
-    <header>Messaging</header>
-    <div class="chat-container">
-        <div class="chat-header">
-            <img src="womanpfp1.jpg" alt="User Profile" class="profile-pic">
-            <span>Azi Bieber</span>
-        </div>
-        <div class="chat-box" id="chat-box">
-            <!-- Messages will be displayed here -->
-        </div>
-        <div class="chat-input">
-            <input type="text" id="message-input" placeholder="Type a message...">
-            <button onclick="sendMessage()">Send</button>
-        </div>
-    </div>
     <script>
         function sendMessage() {
             var input = document.getElementById("message-input");
@@ -43,5 +20,31 @@
             }
         }
     </script>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="messaging.html">Messages</a>
+            <a href="user.html">Profile</a>
+            <a href="profile.html">Create Account</a>
+        </nav>
+        
+        <h1 class="text-center">Messaging</h1>
+        
+        <div class="chat-container">
+            <div class="chat-header">
+                <img src="womanpfp1.jpg" alt="User Profile" class="profile-pic" style="width: 40px; height: 40px;">
+                <span>Azi Bieber</span>
+            </div>
+            <div class="chat-box" id="chat-box">
+                <!-- Messages will appear here -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="message-input" placeholder="Type a message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
