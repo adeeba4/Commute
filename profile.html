@@ -1,54 +1,52 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Commute</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    
-    
-    
-
+    <title>Create Account - Commute</title>
 </head>
-    <section>
-        <body>
-            <nav> 
+<body>
+    <div class="container">
+        <nav>
             <a href="index.html">Home</a>
-            <a href="messaging.html">Message</a>
+            <a href="messaging.html">Messages</a>
             <a href="user.html">Profile</a>
-            <a href="profile.html" id>Create an account</a>
-            </nav>
-            
-            <h1>Create Account</h1>
-            <p>Create your profile to start connecting with others!</p>
-            <p>
+            <a href="profile.html">Create Account</a>
+        </nav>
+        
+        <h1 class="text-center">Create Account</h1>
+        <p class="text-center">Create your profile to start connecting with others!</p>
+        
+        <section>
+            <form>
                 <label for="firstName">First Name:</label>
                 <input type="text" name="firstName" id="firstName" required>
-            </p>
-            <p>
+                
                 <label for="lastName">Last Name:</label>
                 <input type="text" name="lastName" id="lastName" required>
-            </p>
-            <p>
+                
                 <label for="email">Email:</label>
-                <input type="text" name="email" id="email" required>
-            </p>
-            <p>
-                <label for="subject" placeholder="Your location">Location:</label>
-                <input type="text" name="subject" id="subject" required>
-            </p>
-            <p>Roles:
+                <input type="email" name="email" id="email" required>
+                
+                <label for="location">Location:</label>
+                <input type="text" name="location" id="location" placeholder="Your location" required>
+                
+                <label for="role">Role:</label>
+                <select id="role" name="role" required>
+                    <option value="">Select your role</option>
+                    <option value="Driver">Driver</option>
+                    <option value="Passenger">Passenger</option>
+                    <option value="Both">Both</option>
+                </select>
+                
+                <p><strong>Role Descriptions:</strong></p>
                 <ul>
-                    <li>Driver: You can drive and take passengers with you</li>
-                    <li>Passenger: You need someone else to drive you</li>
-                    <li>Both: You want to split driving duties with fellow commuters</li>
+                    <li><strong>Driver:</strong> You can drive and take passengers with you</li>
+                    <li><strong>Passenger:</strong> You need someone else to drive you</li>
+                    <li><strong>Both:</strong> You want to split driving duties with fellow commuters</li>
                 </ul>
-            </p>
-            <input list="role" placeholder="Select your role">
-            <datalist id="role">
-                <option value="Driver">
-                <option value="Passenger">
-                <option value="Both">
-            </datalist>
-
-            <p>
+                
                 <label for="language">Select Language:</label>
                 <select id="language" name="language">
                     <option value="english">English</option>
@@ -56,19 +54,22 @@
                     <option value="french">French</option>
                     <option value="german">German</option>
                 </select>
+                
+                <input type="submit" value="Create Account">
+            </form>
+        </section>
+        
+        <section>
+            <h4>Privacy</h4>
+            <p>Your information is safe with us. We will never share your information with third parties.</p>
+        </section>
+        
+        <section>
+            <h4>Contact</h4>
+            <p>If you have any questions or concerns, reach out to us at 
+                <a href="mailto:reachout@commute.com" target="_blank">reachout@commute.com</a>
             </p>
-
-            <input type="submit">
-        </body>
-    </section>
-    <section>
-        <h4>Privacy</h4>
-        <p>Your information is safe with us. We will never share your information with third parties.</p>
-    </section>
-    <section>
-        <h4>Contact</h4>
-        <p>If you have any questions or concerns, reach out to us at 
-            <a href="mailto:reachout@commute.com" target="_blank">reachout@commute.com</a>
-        </p>
-    </section>
+        </section>
+    </div>
+</body>
 </html>
