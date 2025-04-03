@@ -4,22 +4,138 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Commute Messaging</title>
-    <script>
-        function sendMessage() {
-            var input = document.getElementById("message-input");
-            var message = input.value.trim();
-            if (message !== "") {
-                var chatBox = document.getElementById("chat-box");
-                var newMessage = document.createElement("div");
-                newMessage.classList.add("message", "sent");
-                newMessage.textContent = message;
-                chatBox.appendChild(newMessage);
-                chatBox.scrollTop = chatBox.scrollHeight;
-                input.value = "";
-            }
+    <title>Messaging - Commute</title>
+    <style>
+        
+        .chat-app {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
         }
-    </script>
+        
+        .chat-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .chat-header .profile-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255,255,255,0.3);
+        }
+        
+        .chat-header .user-info {
+            flex: 1;
+        }
+        
+        .chat-header .user-info h2 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+        
+        .chat-header .user-info p {
+            margin: 3px 0 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .chat-box {
+            height: 400px;
+            padding: 20px;
+            background: #f9f9f9;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .message {
+            max-width: 70%;
+            padding: 12px 15px;
+            border-radius: 18px;
+            line-height: 1.4;
+            position: relative;
+            word-wrap: break-word;
+        }
+        
+        .sent {
+            background: var(--primary-color);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .received {
+            background: #e5e5ea;
+            color: black;
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+        
+        .message-time {
+            display: block;
+            font-size: 0.7rem;
+            opacity: 0.7;
+            margin-top: 5px;
+            text-align: right;
+        }
+        
+        .chat-input {
+            display: flex;
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #eee;
+        }
+        
+        .chat-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            outline: none;
+            font-size: 1rem;
+        }
+        
+        .chat-input button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .chat-input button:hover {
+            background: var(--primary-dark);
+        }
+        
+        .chat-input button i {
+            font-size: 1.2rem;
+        }
+        
+        
+        .sample-message {
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -30,21 +146,127 @@
             <a href="profile.html">Create Account</a>
         </nav>
         
-        <h1 class="text-center">Messaging</h1>
+        <h1 class="text-center">Messages</h1>
         
-        <div class="chat-container">
+        <div class="chat-app">
             <div class="chat-header">
-                <img src="womanpfp1.jpg" alt="User Profile" class="profile-pic" style="width: 40px; height: 40px;">
-                <span>Azi Bieber</span>
+                <img src="womanpfp1.jpg" alt="User Profile" class="profile-pic">
+                <div class="user-info">
+                    <h2>Miranda McRae</h2>
+                    <p>Online</p>
+                </div>
+                <div class="header-actions">
+                    <button class="icon-btn"><i class="fas fa-phone"></i></button>
+                    <button class="icon-btn"><i class="fas fa-video"></i></button>
+                    <button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button>
+                </div>
             </div>
+            
             <div class="chat-box" id="chat-box">
-                <!-- Messages will appear here -->
+                
+                <div class="message received sample-message">
+                    Hey there! Are you still available for carpool tomorrow?
+                    <span class="message-time">10:30 AM</span>
+                </div>
+                
+                
+                <div class="message sent sample-message">
+                    Yes, I am! What time works for you?
+                    <span class="message-time">10:32 AM</span>
+                </div>
+                
+                
+                <div class="message received sample-message">
+                    How about 8:30 AM at the usual spot?
+                    <span class="message-time">10:33 AM</span>
+                </div>
             </div>
+            
             <div class="chat-input">
                 <input type="text" id="message-input" placeholder="Type a message...">
-                <button onclick="sendMessage()">Send</button>
+                <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatBox = document.getElementById('chat-box');
+            const messageInput = document.getElementById('message-input');
+            
+            
+            chatBox.scrollTop = chatBox.scrollHeight;
+            
+            
+            messageInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        });
+        
+        function sendMessage() {
+            const input = document.getElementById('message-input');
+            const message = input.value.trim();
+            
+            if (message !== '') {
+                const chatBox = document.getElementById('chat-box');
+                
+                
+                const newMessage = document.createElement('div');
+                newMessage.classList.add('message', 'sent', 'sample-message');
+                
+                
+                newMessage.innerHTML = message + 
+                    `<span class="message-time">${getCurrentTime()}</span>`;
+                
+                
+                chatBox.appendChild(newMessage);
+                
+                
+                input.value = '';
+                
+                
+                chatBox.scrollTop = chatBox.scrollHeight;
+                
+                
+                setTimeout(simulateReply, 1000);
+            }
+        }
+        
+        function simulateReply() {
+            const replies = [
+                "Sounds good!",
+                "I'll be there!",
+                "Can we make it 15 minutes later?",
+                "Perfect, see you then!",
+                "Thanks for confirming!"
+            ];
+            
+            const randomReply = replies[Math.floor(Math.random() * replies.length)];
+            const chatBox = document.getElementById('chat-box');
+            
+            const replyMessage = document.createElement('div');
+            replyMessage.classList.add('message', 'received', 'sample-message');
+            replyMessage.innerHTML = randomReply + 
+                `<span class="message-time">${getCurrentTime()}</span>`;
+            
+            chatBox.appendChild(replyMessage);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+        
+        function getCurrentTime() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            
+            hours = hours % 12;
+            hours = hours ? hours : 12; 
+            minutes = minutes < 10 ? '0'+minutes : minutes;
+            
+            return `${hours}:${minutes} ${ampm}`;
+        }
+    </script>
 </body>
 </html>
